@@ -36,12 +36,12 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { emptyCart } from '../redux/cartSlice';
 
-const OrderConfirmation = ({ newOrder }) => {
+const OrderConfirmation = ( ) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const handleOrderDetail = () => {
-      navigate("/orderDetail", { state: { orderId: newOrder.id } }); // Pass the orderId in state
+      navigate("/shop"); // Pass the orderId in state
       dispatch(emptyCart());
   };
   
@@ -52,7 +52,7 @@ const OrderConfirmation = ({ newOrder }) => {
             <p className="mt-4 text-center">Thank you for your purchase!</p>
             <p className="mt-2 text-center">Your order has been placed successfully and will be processed soon.</p>
             <div className="mt-6 text-center">
-                <button className="btn btn-primary" onClick={handleOrderDetail}>Go to Order History</button>
+                <button className="btn btn-primary" onClick={handleOrderDetail}>Continue Shopping...</button>
             </div>
         </div>
     );

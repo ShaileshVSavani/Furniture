@@ -241,9 +241,9 @@ body {
   transform: skew(40deg, 0deg);
 }
 
-.fifth-image {
+/* .fifth-image {
   margin-top: -11rem;
-}
+} */
 .bg-yellow {
   background-color: var(--yellow-color);
 }
@@ -278,3 +278,4 @@ body {
   max-width: 90%;
   width: 100%;
 }
+

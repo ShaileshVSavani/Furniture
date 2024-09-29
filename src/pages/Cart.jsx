@@ -1,4 +1,3 @@
-
 // import React, { useEffect } from "react";
 // import { MdDeleteForever } from "react-icons/md";
 // import { useDispatch, useSelector } from "react-redux";
@@ -138,13 +137,7 @@
 
 // export default Cart;
 
-
-
 //======================================================
-
-
-
-
 
 // import React, { useEffect, useState } from "react";
 // import { MdDeleteForever } from "react-icons/md";
@@ -158,7 +151,7 @@
 // const Cart = () => {
 //   const dispatch = useDispatch();
 //   const { data: cartProducts, totalAmount } = useSelector((state) => state.cart);
-  
+
 //   // State for coupon code and discount
 //   const [couponCode, setCouponCode] = useState("");
 //   const [discount, setDiscount] = useState(0);
@@ -324,7 +317,6 @@
 
 // export default Cart;
 
-
 //=====
 
 import React, { useEffect, useState } from "react";
@@ -338,8 +330,10 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { data: cartProducts, totalAmount } = useSelector((state) => state.cart);
-  
+  const { data: cartProducts, totalAmount } = useSelector(
+    (state) => state.cart
+  );
+
   const [couponCode, setCouponCode] = useState("");
   const [discount, setDiscount] = useState(0);
 
@@ -387,7 +381,7 @@ const Cart = () => {
             </div>
           ) : (
             <div>
-              <table className="w-full shadow-2xl rounded-2xl overflow-hidden">
+              {/* <table className="w-full shadow-2xl rounded-2xl overflow-hidden">
                 <thead className="bg-gray-800 text-white font-semibold">
                   <tr>
                     <th className="px-2 md:px-4 py-2">Sr. No.</th>
@@ -446,10 +440,98 @@ const Cart = () => {
                     </tr>
                   ))}
                 </tbody>
+              </table> */}
+
+              <table className="w-full shadow-2xl rounded-2xl overflow-hidden">
+                <thead className="bg-gray-800 text-white font-semibold">
+                  <tr>
+                    <th className="px-2 py-2 text-xs md:text-sm lg:text-base">
+                      Sr. No.
+                    </th>
+                    <th className="px-2 py-2 w-2/3 md:w-1/3 text-xs md:text-sm lg:text-base">
+                      Product
+                    </th>
+                    <th className="px-2 py-2 text-xs md:text-sm lg:text-base">
+                      Price
+                    </th>
+                    <th className="px-2 py-2 text-xs md:text-sm lg:text-base">
+                      Quantity
+                    </th>
+                    <th className="px-2 py-2 text-xs md:text-sm lg:text-base">
+                      SubTotal
+                    </th>
+                    <th className="px-2 py-2 text-xs md:text-sm lg:text-base">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {cartProducts.map((item, index) => (
+                    <tr key={item.id} className="border">
+                      <td className="text-center px-2 py-2 text-xs md:text-sm lg:text-base">
+                        {index + 1}
+                      </td>
+                      <td className="text-center px-2 py-2 w-2/3 md:w-1/3">
+                        <div className="flex flex-col items-center">
+                          <img
+                            src={item.img}
+                            alt="Product"
+                            className="h-16 md:h-24 lg:h-40 w-24 md:w-32 lg:w-40 object-contain mb-2"
+                          />
+                          <p className="font-semibold text-xs md:text-sm lg:text-base">
+                            {item.title}
+                          </p>
+                        </div>
+                      </td>
+                      <td className="text-center px-2 py-2 text-xs md:text-sm lg:text-base">
+                        ${item.price}
+                      </td>
+                      <td className="text-center px-2 py-2">
+                        <div className="flex items-center justify-center">
+                          <button
+                            className="border py-1 px-3 md:py-2 md:px-4 lg:py-3 lg:px-6"
+                            onClick={() =>
+                              decreaseQuantity(item.id, item.quantity)
+                            }
+                          >
+                            <PiMinus />
+                          </button>
+                          <span className="border py-1 px-3 md:py-2 md:px-4 lg:py-3 lg:px-6 mx-2">
+                            {item.quantity || 1}
+                          </span>
+                          <button
+                            className="border py-1 px-3 md:py-2 md:px-4 lg:py-3 lg:px-6"
+                            onClick={() =>
+                              increaseQuantity(item.id, item.quantity)
+                            }
+                          >
+                            <PiPlus />
+                          </button>
+                        </div>
+                      </td>
+                      <td className="text-center px-2 py-2 text-xs md:text-sm lg:text-base">
+                        ${item.price * item.quantity}
+                      </td>
+                      <td className="text-center px-2 py-2">
+                        <span
+                          className="text-red-500 cursor-pointer"
+                          onClick={() => removeFromCart(item.id)}
+                        >
+                          <MdDeleteForever
+                            size={20}
+                            className="md:size-25 lg:size-30"
+                          />
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
               </table>
 
               <div className="p-4 md:p-6 w-full md:w-2/3 rounded-2xl shadow-2xl bg-white font-bold mt-4">
-                <h1 className="mb-4 text-center text-2xl md:text-3xl">Cart Total</h1>
+                <h1 className="mb-4 text-center text-2xl md:text-3xl">
+                  Cart Total
+                </h1>
                 <h2 className="flex justify-between mt-3">
                   Sub Total : <span>${totalAmount}</span>
                 </h2>
@@ -502,4 +584,3 @@ const Cart = () => {
 };
 
 export default Cart;
-

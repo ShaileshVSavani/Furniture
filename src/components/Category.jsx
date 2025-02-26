@@ -59,7 +59,7 @@ const Category = () => {
   return (
     <div className="w-11/12 m-auto mt-4">
       {/* Responsive Grid Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
         {category.map((category, key) => (
           <div key={key}>
             <div className="m-2">

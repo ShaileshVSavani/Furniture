@@ -1,19 +1,3 @@
-// import React from 'react'
-// import PageHeading from '../common/PageHeading'
-
-// const ContactUs = () => {
-//   return (
-//     <div>
-//       <PageHeading home={"home"} pagename={"ContactUs"} />
-//     </div>
-//   )
-// }
-
-// export default ContactUs
-
-
-//==============================================
-
 
 import React from 'react';
 import PageHeading from '../common/PageHeading';

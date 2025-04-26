@@ -94,7 +94,7 @@ const Shop = () => {
   }
 
   return (
-    <div>
+    <div className="mt-4">
       <PageHeading home={"home"} pagename={"Shop"} />
       <div>
         <div className="w-11/12 m-auto flex flex-col md:flex-row gap-3 items-start mt-8">

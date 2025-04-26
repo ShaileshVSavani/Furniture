@@ -4,7 +4,7 @@ import PageHeading from '../common/PageHeading';
 
 const AboutUs = () => {
   return (
-    <div className="py-8 px-4 md:px-8">
+    <div className="pb-8 px-4 md:px-8 mt-4">
       <PageHeading home={"home"} pagename={"About Us"} />
 
       <section className="mt-8 max-w-4xl mx-auto">

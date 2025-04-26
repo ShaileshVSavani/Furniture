@@ -101,12 +101,12 @@ const Shop = () => {
           <div className="filterproduct w-full md:w-1/4 bg-white shadow-lg p-4 mb-4 md:mb-0">
             <div>
               <div className="my-4">
-                <h1 className="text-4xl font-semibold">Filter</h1>
+                <h1 className="text-4xl font-semibold text-gray-700">Filter</h1>
                 <hr />
               </div>
 
               <div className="my-4">
-                <h1 className="mb-3 text-3xl font-semibold">By Price</h1>
+                <h1 className="mb-3 text-3xl font-semibold text-gray-700">By Price</h1>
                 <div>
                   <Slider
                     min={0}
@@ -115,14 +115,14 @@ const Shop = () => {
                     defaultValue={filters.priceRange}
                     onChange={handlePriceChange}
                   />
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-gray-700">
                     <span>Min Price: ${filters.priceRange[0]}</span>
                     <span>Max Price: ${filters.priceRange[1]}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="my-4">
+              <div className="my-4 text-gray-700">
                 <h1 className="mb-3 text-3xl font-semibold">By Category</h1>
                 <div>
                   {categoryList.map((category, key) => (
@@ -140,7 +140,7 @@ const Shop = () => {
                 </div>
               </div>
 
-              <div className="my-4">
+              <div className="my-4 text-gray-700">
                 <h1 className="mb-3 text-3xl font-semibold">By Brand</h1>
                 <div>
                   {brandList.map((brand, key) => (
@@ -155,7 +155,7 @@ const Shop = () => {
                   ))}
                 </div>
               </div>
-              <div className="flex justify-between mb-4 flex-col">
+              <div className="flex justify-between mb-4 flex-col text-gray-700">
                 <h1 className="text-3xl font-semibold mb-2">By Search</h1>
                 <input
                   type="text"

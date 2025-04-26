@@ -4,7 +4,7 @@ import PageHeading from '../common/PageHeading';
 
 const ContactUs = () => {
   return (
-    <div className="flex flex-col items-center min-h-screen bg-base-200 p-4">
+    <div className="flex flex-col items-center min-h-screen bg-base-200 p-4 text-gray-700">
       <PageHeading home={"home"} pagename={"Contact Us"} />
       <div className="w-full max-w-3xl mt-8 bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4 text-center">Get in Touch</h2>
@@ -49,7 +49,7 @@ const ContactUs = () => {
             <input
               type="submit"
               value="Send Message"
-              className="btn btn-outline w-full"
+              className="btn btn-outline w-full text-gray-700"
             />
           </div>
         </form>
